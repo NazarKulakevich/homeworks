@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    width: 980px;
+    min-height: 100vh;
+    margin: 0 auto;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+    overflow: hidden;
+    padding: 50px;
+}
+
+ul {
+    counter-reset: list;
+}
+
+ul li {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+ul li:before {
+    content: counter(list);
+    counter-increment: list;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+/*********************************************************************************************************/
+
+li:nth-child(4n-1) {
+    color: red;
+}
+
+li:nth-of-type(2n)::first-letter {
+    color: yellow;
+    font-size: 30px;
+}
+
+ul {
+    position: relative;
+}
+
+ul li {
+    padding-right: 340px;
+}
+
+ul:before,
+ul:after {
+    position: absolute;
+    right: 0;
+    width: 260px;
+    border: 2px solid;
+    padding: 15px;
+    color: #ccc;
+    font-size: 40px;
+}
+
+ul:before {
+    content: "Этого блока здесь быть не должно ;)";
+    top: 0;
+}
+
+ul:after {
+    content: "А уж этого-то и подавно!!!)";
+    bottom: 0;
+}
